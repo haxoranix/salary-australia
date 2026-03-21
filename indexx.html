@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en-AU" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Salary Calculator Australia 2025-26 | Take Home Pay, Tax & Super</title>
+  <meta name="description" content="Use this Australia salary calculator to estimate take-home pay, income tax, Medicare levy and employer super. View annual, monthly, fortnightly and weekly pay in seconds." />
+  <meta name="keywords" content="salary calculator australia, take home pay calculator australia, australia pay calculator, salary after tax australia, tax calculator australia, super calculator australia" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="author" content="PayPath Australia" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="canonical" href="https://example.com/salary-calculator-australia" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Salary Calculator Australia 2025-26" />
+  <meta property="og:description" content="Estimate take-home pay, tax, Medicare levy and super in Australia with a fast salary calculator." />
+  <meta property="og:url" content="https://example.com/salary-calculator-australia" />
+  <meta property="og:site_name" content="PayPath Australia" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Salary Calculator Australia 2025-26" />
+  <meta name="twitter:description" content="See Australian after-tax salary, Medicare levy and employer super in one place." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Salary Calculator Australia",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "description": "Australian salary calculator for estimating take-home pay, income tax, Medicare levy and employer superannuation.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "AUD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does this salary calculator show?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It estimates take-home pay, income tax, Medicare levy and employer super for Australian salary figures."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this calculator show weekly and fortnightly pay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. It shows annual, monthly, fortnightly and weekly net pay estimates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator include superannuation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Employer superannuation is estimated separately, and package figures that include super can also be entered."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --bg-soft:#ffffff;
+      --surface:#ffffff;
+      --surface-2:#f2f6fb;
+      --surface-3:#eef3f9;
+      --text:#0f172a;
+      --muted:#5a6883;
+      --line:#dbe4ef;
+      --accent:#2563eb;
+      --accent-2:#7c3aed;
+      --good:#0f9f6e;
+      --warn:#d97706;
+      --danger:#dc2626;
+      --shadow:0 18px 50px rgba(15,23,42,.08);
+      --radius:24px;
+      --radius-sm:18px;
+      --max:1240px;
+    }
+
+    html[data-theme="dark"]{
+      --bg:#07111f;
+      --bg-soft:#0d1728;
+      --surface:rgba(255,255,255,.06);
+      --surface-2:rgba(255,255,255,.045);
+      --surface-3:rgba(255,255,255,.03);
+      --text:#ecf3ff;
+      --muted:#9fb0cb;
+      --line:rgba(255,255,255,.10);
+      --accent:#7dd3fc;
+      --accent-2:#a78bfa;
+      --good:#6ee7b7;
+      --warn:#fbbf24;
+      --danger:#fca5a5;
+      --shadow:0 24px 60px rgba(0,0,0,.32);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      line-height:1.55;
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,.10), transparent 26%),
+        radial-gradient(circle at top right, rgba(124,58,237,.08), transparent 24%),
+        var(--bg);
+      transition:background .2s ease,color .2s ease;
+    }
+
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(calc(100% - 32px), var(--max));margin:0 auto}
+    .muted{color:var(--muted)}
+    .small{font-size:13px;color:var(--muted)}
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:40;
+      backdrop-filter:blur(16px);
+      background:color-mix(in srgb, var(--bg-soft) 84%, transparent);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .brand-badge{
+      width:40px;
+      height:40px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#fff;
+      box-shadow:var(--shadow);
+      font-weight:900;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .nav-tools{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .theme-toggle{
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--text);
+      border-radius:14px;
+      padding:10px 14px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .hero{
+      padding:64px 0 28px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:24px;
+      align-items:center;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--muted);
+      font-size:13px;
+    }
+    h1{
+      font-size:clamp(38px, 6vw, 66px);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      margin:18px 0 14px;
+    }
+    .hero p{
+      margin:0 0 24px;
+      max-width:760px;
+      color:var(--muted);
+      font-size:18px;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:24px;
+    }
+    .btn{
+      border:0;
+      border-radius:16px;
+      padding:14px 18px;
+      font-weight:800;
+      cursor:pointer;
+      transition:transform .18s ease, opacity .18s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#fff;
+    }
+    .btn-secondary{
+      background:var(--surface);
+      color:var(--text);
+      border:1px solid var(--line);
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .stat{
+      padding:18px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--radius-sm);
+      box-shadow:var(--shadow);
+    }
+    .stat strong{
+      display:block;
+      font-size:24px;
+      margin-bottom:6px;
+    }
+    .stat span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-card{padding:22px}
+    .mini-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:16px;
+    }
+    .mini{
+      background:var(--surface-2);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+    }
+    .mini strong{
+      display:block;
+      font-size:22px;
+      margin-top:6px;
+    }
+
+    .section{padding:28px 0}
+    .section-title{
+      font-size:clamp(28px,4vw,40px);
+      letter-spacing:-.03em;
+      margin:0 0 10px;
+    }
+    .section-sub{
+      margin:0 0 22px;
+      max-width:840px;
+      color:var(--muted);
+    }
+
+    .app-grid{
+      display:grid;
+      grid-template-columns:1.03fr .97fr;
+      gap:24px;
+      align-items:start;
+    }
+    .panel{padding:22px}
+    .panel h2{
+      font-size:22px;
+      margin:0 0 18px;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .field.full{grid-column:1 / -1}
+    .label-row{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    label{
+      font-size:14px;
+      font-weight:700;
+    }
+    input, select{
+      width:100%;
+      background:var(--bg-soft);
+      color:var(--text);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px 14px;
+      font-size:15px;
+      outline:none;
+    }
+    input:focus, select:focus{
+      border-color:var(--accent);
+      box-shadow:0 0 0 4px color-mix(in srgb, var(--accent) 16%, transparent);
+    }
+
+    .switch-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 16px;
+      background:var(--surface-2);
+      border:1px solid var(--line);
+      border-radius:16px;
+    }
+    .check{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      cursor:pointer;
+      user-select:none;
+    }
+    .check input{width:auto}
+
+    .tip{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:18px;
+      height:18px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--surface-3);
+      color:var(--muted);
+      font-size:11px;
+      font-weight:800;
+      cursor:help;
+      flex:0 0 auto;
+    }
+    .tip::after{
+      content:attr(data-tip);
+      position:absolute;
+      left:50%;
+      bottom:130%;
+      transform:translateX(-50%);
+      width:min(260px, calc(100vw - 40px));
+      padding:10px 12px;
+      border-radius:12px;
+      background:#0f172a;
+      color:#fff;
+      font-size:12px;
+      line-height:1.45;
+      box-shadow:0 18px 40px rgba(0,0,0,.28);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .16s ease, transform .16s ease;
+      z-index:12;
+      text-align:left;
+    }
+    .tip:hover::after,
+    .tip:focus-visible::after{
+      opacity:1;
+      transform:translateX(-50%) translateY(-2px);
+    }
+    html[data-theme="dark"] .tip::after{
+      background:#eff6ff;
+      color:#0f172a;
+    }
+
+    .result-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:16px;
+    }
+    .badge{
+      white-space:nowrap;
+      padding:8px 12px;
+      border-radius:999px;
+      background:color-mix(in srgb, var(--good) 14%, transparent);
+      color:var(--good);
+      border:1px solid color-mix(in srgb, var(--good) 24%, transparent);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .result-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-bottom:16px;
+    }
+    .result-card{
+      padding:16px;
+      background:var(--surface-2);
+      border:1px solid var(--line);
+      border-radius:18px;
+    }
+    .result-card .head{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .result-card strong{
+      display:block;
+      margin-top:6px;
+      font-size:26px;
+    }
+
+    .summary{
+      display:grid;
+      gap:12px;
+      margin-top:14px;
+    }
+    .summary-item{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 16px;
+      background:var(--surface-2);
+      border:1px solid var(--line);
+      border-radius:14px;
+    }
+    .summary-left{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      min-width:0;
+    }
+    .summary-item span:last-child{font-weight:800}
+
+    .bar-wrap{margin-top:16px}
+    .bar{
+      height:14px;
+      border-radius:999px;
+      background:var(--surface-2);
+      border:1px solid var(--line);
+      overflow:hidden;
+    }
+    .bar-fill{
+      height:100%;
+      width:0;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      transition:width .35s ease;
+    }
+
+    .ad-card{
+      padding:20px;
+      border-radius:22px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .three-col{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+    .copy-card{
+      padding:20px;
+      border-radius:22px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .copy-card h3{margin-top:0}
+    .copy-card p{color:var(--muted)}
+
+    .copy-block{
+      padding:24px;
+      border-radius:24px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .copy-block p{color:var(--muted)}
+
+    .faq details{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px 18px;
+      box-shadow:var(--shadow);
+    }
+    .faq details + details{margin-top:12px}
+    .faq summary{
+      font-weight:800;
+      cursor:pointer;
+    }
+    .faq p{margin:12px 0 0;color:var(--muted)}
+
+    footer{
+      padding:30px 0 50px;
+    }
+    .footer-card{
+      padding:22px;
+      border-radius:24px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      color:var(--muted);
+    }
+
+    @media (max-width:1020px){
+      .hero-grid,.app-grid,.three-col{grid-template-columns:1fr}
+    }
+
+    @media (max-width:760px){
+      .nav-links{display:none}
+      .stats,.mini-grid,.form-grid,.result-grid{grid-template-columns:1fr}
+      h1{font-size:40px}
+      .hero{padding-top:40px}
+      .result-head{flex-direction:column}
+      .summary-item{align-items:flex-start;flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand" aria-label="PayPath Australia home">
+        <span class="brand-badge">$</span>
+        <span>PayPath Australia</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#calculator">Calculator</a>
+        <a href="#guide">Guide</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <div class="nav-tools">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">Dark mode</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill">Australian salary calculator • after-tax pay • tax, Medicare levy and super</span>
+        <h1>See what a salary really looks like after tax in Australia</h1>
+        <p>
+          Estimate take-home pay across annual, monthly, fortnightly and weekly views. Get a simple breakdown of income tax, Medicare levy and employer super to compare offers, budget better and understand real pay.
+        </p>
+        <div class="hero-actions">
+          <a href="#calculator" class="btn btn-primary">Calculate salary</a>
+          <a href="#faq" class="btn btn-secondary">Read FAQs</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>Take-home pay</strong>
+            <span>See net income after tax and Medicare levy</span>
+          </div>
+          <div class="stat">
+            <strong>Pay cycle views</strong>
+            <span>Check annual, monthly, fortnightly and weekly pay</span>
+          </div>
+          <div class="stat">
+            <strong>Super included</strong>
+            <span>Estimate employer super alongside salary</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card hero-card">
+        <div class="small">Useful for salary comparisons and budgeting</div>
+        <h2 style="margin:6px 0 0;font-size:24px;">Understand base salary, tax and super in one view</h2>
+        <p class="muted" style="margin:10px 0 0;">
+          Enter a salary figure to estimate net pay, income tax, Medicare levy and employer super. This helps when comparing job offers, planning cash flow, or checking how much pay may land in the bank account.
+        </p>
+        <div class="mini-grid">
+          <div class="mini">
+            <div class="small">After-tax pay</div>
+            <strong>Annual to weekly</strong>
+          </div>
+          <div class="mini">
+            <div class="small">Tax breakdown</div>
+            <strong>Easy to read</strong>
+          </div>
+          <div class="mini">
+            <div class="small">Super</div>
+            <strong>Shown separately</strong>
+          </div>
+          <div class="mini">
+            <div class="small">Salary package</div>
+            <strong>With or without super</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="calculator">
+      <div class="wrap">
+        <h2 class="section-title">Australian salary calculator</h2>
+        <p class="section-sub">
+          Enter a salary or package amount to estimate after-tax pay in Australia. Tooltips explain each field for first-time users.
+        </p>
+
+        <div class="app-grid">
+          <section class="card panel">
+            <h2>Enter salary details</h2>
+
+            <div class="form-grid">
+              <div class="field">
+                <div class="label-row">
+                  <label for="financialYear">Financial year</label>
+                  <button type="button" class="tip" data-tip="Select the tax year used for the estimate. In Australia, a financial year usually runs from 1 July to 30 June." aria-label="What is financial year?">i</button>
+                </div>
+                <select id="financialYear">
+                  <option value="2025-26" selected>2025-26</option>
+                  <option value="2024-25">2024-25</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <div class="label-row">
+                  <label for="residency">Tax residency</label>
+                  <button type="button" class="tip" data-tip="Choose Australian resident if the person is taxed as a resident for Australian tax purposes. Choose foreign resident if taxed as a foreign resident." aria-label="What is tax residency?">i</button>
+                </div>
+                <select id="residency">
+                  <option value="resident" selected>Australian resident</option>
+                  <option value="foreign">Foreign resident</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <div class="label-row">
+                  <label for="salaryAmount">Annual salary or package (A$)</label>
+                  <button type="button" class="tip" data-tip="Enter the yearly amount. If 'salary includes super' is off, this is treated as base salary before employer super. If it is on, this is treated as a total package including super." aria-label="What salary amount should be entered?">i</button>
+                </div>
+                <input id="salaryAmount" type="number" min="0" step="100" value="85000" />
+              </div>
+
+              <div class="field">
+                <div class="label-row">
+                  <label for="payView">Primary pay view</label>
+                  <button type="button" class="tip" data-tip="Choose how the main net pay result should be shown. The calculator still displays all pay-cycle views below." aria-label="What is primary pay view?">i</button>
+                </div>
+                <select id="payView">
+                  <option value="annual" selected>Annual</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="fortnightly">Fortnightly</option>
+                  <option value="weekly">Weekly</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <div class="switch-row">
+                  <div>
+                    <div style="font-weight:800;display:flex;align-items:center;gap:8px;">
+                      Salary includes super
+                      <button type="button" class="tip" data-tip="Turn this on if the entered amount is a total remuneration package that already includes employer superannuation." aria-label="What does salary includes super mean?">i</button>
+                    </div>
+                    <div class="small">Use this when the yearly figure already includes employer superannuation.</div>
+                  </div>
+                  <label class="check">
+                    <input id="includesSuper" type="checkbox" />
+                    <span>Enabled</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="field full">
+                <div class="switch-row">
+                  <div>
+                    <div style="font-weight:800;display:flex;align-items:center;gap:8px;">
+                      Include Medicare levy
+                      <button type="button" class="tip" data-tip="For many Australian resident taxpayers, Medicare levy is an extra amount on top of income tax. It is often around 2%, though low-income reductions can apply." aria-label="What is Medicare levy?">i</button>
+                    </div>
+                    <div class="small">Useful for a more realistic take-home pay estimate for many resident taxpayers.</div>
+                  </div>
+                  <label class="check">
+                    <input id="includeMedicare" type="checkbox" checked />
+                    <span>Enabled</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="card panel">
+            <div class="result-head">
+              <div>
+                <div class="small">Estimated result</div>
+                <h2 id="resultTitle" style="margin:6px 0 0;">Annual take-home pay</h2>
+              </div>
+              <span class="badge" id="badgeText">2025-26 estimate</span>
+            </div>
+
+            <div class="result-grid">
+              <div class="result-card">
+                <div class="head">
+                  <span class="small">Net pay</span>
+                  <button type="button" class="tip" data-tip="This is the estimated amount left after income tax and Medicare levy. It does not include every possible deduction or repayment." aria-label="What is net pay?">i</button>
+                </div>
+                <strong id="netPayOut">A$0</strong>
+              </div>
+              <div class="result-card">
+                <div class="head">
+                  <span class="small">Tax + levy</span>
+                  <button type="button" class="tip" data-tip="This combines estimated income tax and Medicare levy for the selected settings." aria-label="What is tax and levy?">i</button>
+                </div>
+                <strong id="taxTotalOut">A$0</strong>
+              </div>
+              <div class="result-card">
+                <div class="head">
+                  <span class="small">Base salary</span>
+                  <button type="button" class="tip" data-tip="This is the salary amount before employer super is added. If the entered figure includes super, base salary is worked out by backing super out of the package." aria-label="What is base salary?">i</button>
+                </div>
+                <strong id="baseSalaryOut">A$0</strong>
+              </div>
+              <div class="result-card">
+                <div class="head">
+                  <span class="small">Employer super</span>
+                  <button type="button" class="tip" data-tip="Employer super is usually paid separately from take-home pay. It is not the same as money received in the bank account." aria-label="What is employer super?">i</button>
+                </div>
+                <strong id="superOut">A$0</strong>
+              </div>
+            </div>
+
+            <div class="summary">
+              <div class="summary-item">
+                <div class="summary-left">
+                  <span>Income tax</span>
+                  <button type="button" class="tip" data-tip="Estimated income tax based on the selected annual taxable salary and residency." aria-label="What is income tax?">i</button>
+                </div>
+                <span id="incomeTaxOut">A$0</span>
+              </div>
+
+              <div class="summary-item">
+                <div class="summary-left">
+                  <span>Medicare levy</span>
+                  <button type="button" class="tip" data-tip="An additional levy that can apply to many Australian resident taxpayers. This calculator estimates a simple version of it." aria-label="What is Medicare levy breakdown?">i</button>
+                </div>
+                <span id="medicareOut">A$0</span>
+              </div>
+
+              <div class="summary-item">
+                <div class="summary-left">
+                  <span>Gross figure entered</span>
+                  <button type="button" class="tip" data-tip="This is the yearly number entered into the calculator, whether it is base salary or a package including super." aria-label="What is gross figure entered?">i</button>
+                </div>
+                <span id="grossPackageOut">A$0</span>
+              </div>
+
+              <div class="summary-item">
+                <div class="summary-left">
+                  <span>Monthly take-home pay</span>
+                  <button type="button" class="tip" data-tip="Estimated net pay per month after tax and Medicare levy." aria-label="What is monthly take-home pay?">i</button>
+                </div>
+                <span id="monthlyNetOut">A$0</span>
+              </div>
+
+              <div class="summary-item">
+                <div class="summary-left">
+                  <span>Fortnightly take-home pay</span>
+                  <button type="button" class="tip" data-tip="Estimated net pay every two weeks after tax and Medicare levy." aria-label="What is fortnightly take-home pay?">i</button>
+                </div>
+                <span id="fortnightlyNetOut">A$0</span>
+              </div>
+
+              <div class="summary-item">
+                <div class="summary-left">
+                  <span>Weekly take-home pay</span>
+                  <button type="button" class="tip" data-tip="Estimated net pay each week after tax and Medicare levy." aria-label="What is weekly take-home pay?">i</button>
+                </div>
+                <span id="weeklyNetOut">A$0</span>
+              </div>
+            </div>
+
+            <div class="bar-wrap">
+              <div class="small">Tax share of base salary</div>
+              <div class="bar"><div class="bar-fill" id="taxBar"></div></div>
+            </div>
+
+            <p class="small" id="notes" style="margin:16px 0 0;">
+              Estimates exclude HELP, Medicare levy surcharge, private health insurance effects, salary sacrifice and most deductions.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="ad-card">
+          <div class="small" style="margin-bottom:10px;">Advertisement</div>
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+               data-ad-slot="1234567890"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="three-col">
+          <article class="copy-card">
+            <h3>Compare salary offers with more clarity</h3>
+            <p>
+              A headline salary does not always show what take-home pay will feel like. This calculator helps turn an annual figure into something easier to compare across jobs.
+            </p>
+          </article>
+
+          <article class="copy-card">
+            <h3>Plan monthly and fortnightly cash flow</h3>
+            <p>
+              Looking only at annual pay can make budgeting harder. Monthly, fortnightly and weekly estimates make rent, bills and savings planning easier.
+            </p>
+          </article>
+
+          <article class="copy-card">
+            <h3>Understand the role of super</h3>
+            <p>
+              Employer super is valuable, but it is separate from take-home pay. Seeing both figures side by side gives a more complete view of total pay.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="guide">
+      <div class="wrap">
+        <div class="copy-block">
+          <h2 class="section-title" style="margin-bottom:14px;">Salary calculator Australia guide</h2>
+          <p>
+            A salary calculator helps show what an Australian pay figure may look like after tax. Instead of focusing only on headline salary, it becomes easier to understand estimated net income, income tax, Medicare levy and employer super in one place.
+          </p>
+          <p>
+            This is especially useful when comparing job offers, deciding whether a package looks competitive, or planning household cash flow. A higher salary can look attractive at first glance, but the real comparison often comes down to after-tax pay and the value of employer super.
+          </p>
+          <p>
+            This Australia salary calculator is designed for people who want a fast, clear estimate. It shows annual, monthly, fortnightly and weekly take-home pay, and it can also handle package figures that already include super. For first-time users, tooltips explain common terms such as Medicare levy, base salary and salary package.
+          </p>
+          <p>
+            The calculator is best used for straightforward salary estimates. It does not currently model every adjustment, such as HELP repayments, salary sacrifice arrangements, deductions, Medicare levy surcharge, private health insurance outcomes or all tax offsets.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="wrap">
+        <h2 class="section-title">Frequently asked questions</h2>
+
+        <details open>
+          <summary>What does this salary calculator show?</summary>
+          <p>
+            It estimates take-home pay, income tax, Medicare levy and employer super based on the selected salary and settings.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can it show weekly and fortnightly pay?</summary>
+          <p>
+            Yes. It shows annual, monthly, fortnightly and weekly take-home pay estimates.
+          </p>
+        </details>
+
+        <details>
+          <summary>What happens if salary includes super?</summary>
+          <p>
+            When that option is enabled, the entered figure is treated as a total package. The calculator backs out employer super to estimate base salary and net pay.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is this calculator suitable for foreign residents?</summary>
+          <p>
+            Yes. It includes a foreign resident setting so tax can be estimated using foreign resident rates in this version.
+          </p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-card">
+        <strong style="display:block;margin-bottom:8px;color:var(--text);">Important note</strong>
+        This calculator provides an estimate only. It does not include every adjustment, deduction, repayment or offset that may affect final tax outcomes.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const fmt = new Intl.NumberFormat("en-AU", {
+      style: "currency",
+      currency: "AUD",
+      maximumFractionDigits: 0
+    });
+
+    const years = {
+      "2025-26": {
+        resident: {
+          brackets: [
+            { upTo: 18200, rate: 0, baseTax: 0, previous: 0 },
+            { upTo: 45000, rate: 0.16, baseTax: 0, previous: 18200 },
+            { upTo: 135000, rate: 0.30, baseTax: 4288, previous: 45000 },
+            { upTo: 190000, rate: 0.37, baseTax: 31288, previous: 135000 },
+            { upTo: Infinity, rate: 0.45, baseTax: 51638, previous: 190000 }
+          ],
+          medicare: {
+            lower: 27222,
+            upper: 34027,
+            rate: 0.02
+          },
+          sgRate: 0.12
+        },
+        foreign: {
+          brackets: [
+            { upTo: 135000, rate: 0.30, baseTax: 0, previous: 0 },
+            { upTo: 190000, rate: 0.37, baseTax: 40500, previous: 135000 },
+            { upTo: Infinity, rate: 0.45, baseTax: 60850, previous: 190000 }
+          ],
+          medicare: {
+            lower: 0,
+            upper: 0,
+            rate: 0
+          },
+          sgRate: 0.12
+        }
+      },
+      "2024-25": {
+        resident: {
+          brackets: [
+            { upTo: 18200, rate: 0, baseTax: 0, previous: 0 },
+            { upTo: 45000, rate: 0.16, baseTax: 0, previous: 18200 },
+            { upTo: 135000, rate: 0.30, baseTax: 4288, previous: 45000 },
+            { upTo: 190000, rate: 0.37, baseTax: 31288, previous: 135000 },
+            { upTo: Infinity, rate: 0.45, baseTax: 51638, previous: 190000 }
+          ],
+          medicare: {
+            lower: 27222,
+            upper: 34027,
+            rate: 0.02
+          },
+          sgRate: 0.115
+        },
+        foreign: {
+          brackets: [
+            { upTo: 135000, rate: 0.30, baseTax: 0, previous: 0 },
+            { upTo: 190000, rate: 0.37, baseTax: 40500, previous: 135000 },
+            { upTo: Infinity, rate: 0.45, baseTax: 60850, previous: 190000 }
+          ],
+          medicare: {
+            lower: 0,
+            upper: 0,
+            rate: 0
+          },
+          sgRate: 0.115
+        }
+      }
+    };
+
+    const els = {
+      financialYear: document.getElementById("financialYear"),
+      residency: document.getElementById("residency"),
+      salaryAmount: document.getElementById("salaryAmount"),
+      payView: document.getElementById("payView"),
+      includesSuper: document.getElementById("includesSuper"),
+      includeMedicare: document.getElementById("includeMedicare"),
+
+      resultTitle: document.getElementById("resultTitle"),
+      badgeText: document.getElementById("badgeText"),
+      netPayOut: document.getElementById("netPayOut"),
+      taxTotalOut: document.getElementById("taxTotalOut"),
+      baseSalaryOut: document.getElementById("baseSalaryOut"),
+      superOut: document.getElementById("superOut"),
+      incomeTaxOut: document.getElementById("incomeTaxOut"),
+      medicareOut: document.getElementById("medicareOut"),
+      grossPackageOut: document.getElementById("grossPackageOut"),
+      monthlyNetOut: document.getElementById("monthlyNetOut"),
+      fortnightlyNetOut: document.getElementById("fortnightlyNetOut"),
+      weeklyNetOut: document.getElementById("weeklyNetOut"),
+      taxBar: document.getElementById("taxBar"),
+      notes: document.getElementById("notes"),
+
+      themeToggle: document.getElementById("themeToggle")
+    };
+
+    function n(v){
+      const num = Number(v);
+      return Number.isFinite(num) && num > 0 ? num : 0;
+    }
+
+    function money(v){
+      return fmt.format(Math.round(v || 0));
+    }
+
+    function calcIncomeTax(income, brackets){
+      if (income <= 0) return 0;
+
+      for (const b of brackets){
+        if (income <= b.upTo){
+          return b.baseTax + ((income - b.previous) * b.rate);
+        }
+      }
+      return 0;
+    }
+
+    function calcMedicareLevy(income, medicareRule, enabled, residency){
+      if (!enabled || residency !== "resident") return 0;
+      if (income <= medicareRule.lower) return 0;
+      if (income < medicareRule.upper){
+        return (income - medicareRule.lower) * 0.10;
+      }
+      return income * medicareRule.rate;
+    }
+
+    function getPayLabel(view){
+      if (view === "annual") return "Annual take-home pay";
+      if (view === "monthly") return "Monthly take-home pay";
+      if (view === "fortnightly") return "Fortnightly take-home pay";
+      return "Weekly take-home pay";
+    }
+
+    function perView(amount, view){
+      if (view === "annual") return amount;
+      if (view === "monthly") return amount / 12;
+      if (view === "fortnightly") return amount / 26;
+      return amount / 52;
+    }
+
+    function update(){
+      const financialYear = els.financialYear.value;
+      const residency = els.residency.value;
+      const salaryAmount = n(els.salaryAmount.value);
+      const payView = els.payView.value;
+      const includesSuper = els.includesSuper.checked;
+      const includeMedicare = els.includeMedicare.checked;
+
+      const yearConfig = years[financialYear][residency];
+      const sgRate = yearConfig.sgRate;
+
+      let packageAmount = salaryAmount;
+      let baseSalary = salaryAmount;
+      let employerSuper = 0;
+
+      if (includesSuper) {
+        baseSalary = salaryAmount / (1 + sgRate);
+        employerSuper = salaryAmount - baseSalary;
+      } else {
+        employerSuper = salaryAmount * sgRate;
+      }
+
+      const taxableIncome = Math.max(0, baseSalary);
+      const incomeTax = calcIncomeTax(taxableIncome, yearConfig.brackets);
+      const medicareLevy = calcMedicareLevy(taxableIncome, yearConfig.medicare, includeMedicare, residency);
+      const totalTax = incomeTax + medicareLevy;
+      const netAnnual = Math.max(0, baseSalary - totalTax);
+
+      els.resultTitle.textContent = getPayLabel(payView);
+      els.badgeText.textContent = `${financialYear} estimate`;
+      els.netPayOut.textContent = money(perView(netAnnual, payView));
+      els.taxTotalOut.textContent = money(perView(totalTax, payView));
+      els.baseSalaryOut.textContent = money(baseSalary);
+      els.superOut.textContent = money(employerSuper);
+
+      els.incomeTaxOut.textContent = money(incomeTax);
+      els.medicareOut.textContent = money(medicareLevy);
+      els.grossPackageOut.textContent = money(packageAmount);
+      els.monthlyNetOut.textContent = money(netAnnual / 12);
+      els.fortnightlyNetOut.textContent = money(netAnnual / 26);
+      els.weeklyNetOut.textContent = money(netAnnual / 52);
+
+      const taxRateShare = baseSalary > 0 ? (totalTax / baseSalary) * 100 : 0;
+      els.taxBar.style.width = `${Math.min(100, taxRateShare)}%`;
+
+      const notes = [];
+      if (includesSuper) {
+        notes.push("The entered figure is treated as a package that already includes employer super.");
+      } else {
+        notes.push("The entered figure is treated as base salary before employer super.");
+      }
+
+      if (residency === "foreign") {
+        notes.push("Foreign resident tax rates are applied in this estimate.");
+      } else if (!includeMedicare) {
+        notes.push("Medicare levy has been switched off for this estimate.");
+      } else {
+        notes.push("Medicare levy is included for a simple resident estimate.");
+      }
+
+      notes.push("HELP, salary sacrifice, deductions, Medicare levy surcharge and most offsets are not included.");
+      els.notes.textContent = notes.join(" ");
+    }
+
+    [
+      els.financialYear,
+      els.residency,
+      els.salaryAmount,
+      els.payView,
+      els.includesSuper,
+      els.includeMedicare
+    ].forEach(el => {
+      el.addEventListener("input", update);
+      el.addEventListener("change", update);
+    });
+
+    els.themeToggle.addEventListener("click", () => {
+      const html = document.documentElement;
+      const current = html.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      html.setAttribute("data-theme", next);
+      els.themeToggle.textContent = next === "dark" ? "Light mode" : "Dark mode";
+    });
+
+    update();
+  </script>
+</body>
+</html>
